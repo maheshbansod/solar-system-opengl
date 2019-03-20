@@ -4,12 +4,10 @@
 
 void init() {
 	glClearColor(0,0,0.3,0);
-	glPointSize(4);
+	glPointSize(2);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(0,WIDTH, 0,HEIGHT);
-	
-	//initValues();
 
 	setPlanetSizes();
 	createStars();
@@ -42,6 +40,9 @@ void mykeyboard(unsigned char key, int xx, int yy) {
 			setPlanetSizes();
 			createAsteroids();
 		}
+		break;
+	case 27: //ESC
+		exit(0);
 		break;
 	default: break;
 	}
